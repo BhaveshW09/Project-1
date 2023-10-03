@@ -1,6 +1,6 @@
-import { BrandedProducts } from "../Components/BrandedProducts";
+import { MostPopular } from "../Components/MostPopular";
 import { Swipers } from "../Components/Swiper/Swiper";
-import { MainCategory } from "../Components/MainCategory";
+import { MagaSale } from "../Components/MagaSale";
 import { Link } from "react-router-dom";
 import { Category } from "../Components/Category";
 
@@ -20,11 +20,11 @@ export const Home = () => {
           <Category />
 
           {/* Branded Products */}
-          <BrandedProducts />
+          <MostPopular />
 
           {/* HeroSection 2 */}
 
-          <MainCategory />
+          <MagaSale />
         </Link>
       </div>
     </>

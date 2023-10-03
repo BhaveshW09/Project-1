@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchTrendingProductsAsync } from "../Redux/Products/ProductSlice";
 
-export const BrandedProducts = () => {
+export const MostPopular = () => {
   const dispatch = useDispatch();
   const trending = useSelector((state) => state.products.category.trending);
-  console.log("popular", BrandedProducts);
 
   const { id } = useParams();
   console.log("params", id);
@@ -17,10 +16,12 @@ export const BrandedProducts = () => {
 
   return (
     <>
-      <div className="mx-auto grid w-full max-w-[1280px] mt-32">
-        <h1 className="font-bold text-4xl my-10 text-center">
-          Most Popular Products
-        </h1>
+      <div className="mx-auto flex-col md:max-lg:flex-row max-w-[1280px] mt-10 items-center space-y-4 px-2 py-10  md:gap-6 md:space-y-0">
+        <div className=" flex justify-center w-72 m-auto mb-6 ">
+          <h1 className="font-bold text-3xl px-3 py-2  border-b-2 border-black text-center w-full ">
+            Popular Products
+          </h1>
+        </div>
         <div className=" grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12">
           {trending.map((item) => (
             <Link to={`/productDetails/${item.id}`}>
