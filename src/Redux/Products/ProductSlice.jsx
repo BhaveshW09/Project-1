@@ -10,9 +10,7 @@ import {
 const initialState = {
   product: [],
   category: {
-    popular: [],
     trending: [],
-    brandedProducts: [],
   },
   productId: null,
 };

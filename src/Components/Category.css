@@ -1,0 +1,26 @@
+.conatiner {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  transform: 0.4s;
+  background-color: #000000;
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: x-large;
+}
+.overlay:hover {
+  opacity: 0.7;
+}

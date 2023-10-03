@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLaptopsAsync } from "../../Redux/CategoryFilter/FilterCategorySlice";
-import { Products } from "./Products";
+import { Products } from "../../Components/Products";
+import { Link } from "react-router-dom";
 
 export const Laptops = () => {
   const dispatch = useDispatch();
@@ -14,25 +15,16 @@ export const Laptops = () => {
   }, [dispatch]);
   return (
     <>
-      <div>
-        <h1>Laptops</h1>
-        <div className="flex justify-center w-[1280px]">
-          <img
-            src="https://images.pexels.com/photos/3944405/pexels-photo-3944405.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt=""
-          />
+      <div className="mx-auto flex flex-col max-w-[1280px]  items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4 ">
+        <div>
+          <h1 className=" text-4xl font-semibold font-sans py-4">Laptops</h1>
         </div>
-
-        <div className="flex">
-          {/* sideFilter */}
-          <div className="w-1/4"></div>
-
-          {/* Products */}
-          <div className=" w-3/4 grid grid-cols-3 gap-y-10 mt-20">
-            {Laptops?.map((item) => (
+        <div className=" grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12">
+          {Laptops?.map((item) => (
+            <Link to={`/productDetails/${item.id}`}>
               <Products key={item.id} {...item} />
-            ))}
-          </div>
+            </Link>
+          ))}
         </div>
       </div>
     </>

@@ -23,32 +23,31 @@ export function Swipers() {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
           <img
-            src="https://mobirise.com/extensions/commercem4/assets/images/gallery00.jpg"
-            alt="image"
+            src="https://www.top10mobiles.info/images/top10mobiles.com/slider/416743900202309210719.jpg"
+            alt="img"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://mobirise.com/extensions/commercem4/assets/images/gallery01.jpg"
-            alt="image"
+            src="https://www.top10mobiles.info/images/top10mobiles.com/slider/229167945202309210719.jpg"
+            alt="img"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://mobirise.com/extensions/commercem4/assets/images/gallery03.jpg"
-            alt="image"
+            src="https://www.top10mobiles.info/images/top10mobiles.com/slider/428589168202309210720.jpg"
+            alt="img"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://mobirise.com/extensions/commercem4/assets/images/gallery05.jpg"
-            alt="image"
+            src="https://www.top10mobiles.info/images/top10mobiles.com/slider/981704934202309210720.jpg"
+            alt="img"
           />
         </SwiperSlide>
       </Swiper>

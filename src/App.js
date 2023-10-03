@@ -11,6 +11,11 @@ import { fetchCartAsync } from "./Redux/Cart/CartSlice";
 import { Footer } from "./Components/Footer";
 import { About } from "./Pages/About";
 import { Contact } from "./Pages/Contact";
+import { Smartphone } from "lucide-react";
+import { SmartPhones } from "./Pages/CategoryFilterPages/SmartPhones";
+import { Laptops } from "./Pages/CategoryFilterPages/Laptops";
+import { Headphones } from "./Pages/CategoryFilterPages/Headphones";
+import { SmartWatch } from "./Pages/CategoryFilterPages/SmartWatch";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +34,10 @@ function App() {
         <Route path="/productDetails/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/allProducts" element={<AllProducts />} />
+        <Route path="/smartphones" element={<SmartPhones />} />
+        <Route path="/laptops" element={<Laptops />} />
+        <Route path="/headphones" element={<Headphones />} />
+        <Route path="/smartwatch" element={<SmartWatch />} />
       </Routes>
       <Footer />
     </div>

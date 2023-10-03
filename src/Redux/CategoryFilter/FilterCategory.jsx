@@ -20,17 +20,6 @@ export const fetchSmartPhones = () => {
 };
 
 // Fragrances
-export const fetchFragrances = () => {
-  return new Promise(async (resolve) => {
-    const response = await fetch(
-      "https://e-commerce-data-0ia9.onrender.com/products"
-    );
-    const data = await response.json();
-    resolve({ data });
-  });
-};
-
-// Laptops
 export const fetchLaptops = () => {
   return new Promise(async (resolve) => {
     const response = await fetch(
@@ -41,8 +30,19 @@ export const fetchLaptops = () => {
   });
 };
 
+// Laptops
+export const fetchHeadphones = () => {
+  return new Promise(async (resolve) => {
+    const response = await fetch(
+      "https://e-commerce-data-0ia9.onrender.com/products"
+    );
+    const data = await response.json();
+    resolve({ data });
+  });
+};
+
 // Skincare
-export const fetchSkincare = () => {
+export const fetchSmartWatch = () => {
   return new Promise(async (resolve) => {
     const response = await fetch(
       "https://e-commerce-data-0ia9.onrender.com/products"

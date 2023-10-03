@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   fetchSmartPhones,
-  fetchFragrances,
   fetchLaptops,
-  fetchSkincare,
+  fetchSmartWatch,
+  fetchHeadphones,
 } from "./FilterCategory";
 
 const initialState = {
   filterCategory: {
     all: [],
     SmartPhones: [],
-    Fragrances: [],
     Laptops: [],
-    Skincare: [],
+    Headphones: [],
+    SmartWatch: [],
   },
 };
 
@@ -33,15 +33,6 @@ export const fetchSmartPhonesAsync = createAsyncThunk(
   }
 );
 
-// Fragrances
-export const fetchFragrancesAsync = createAsyncThunk(
-  "Fragrances/fetchFragrances",
-  async () => {
-    const response = await fetchFragrances();
-    return response.data;
-  }
-);
-
 // Laptops
 export const fetchLaptopsAsync = createAsyncThunk(
   "Laptops/fetchLaptops",
@@ -51,11 +42,20 @@ export const fetchLaptopsAsync = createAsyncThunk(
   }
 );
 
-// Skincare
-export const fetchSkincareAsync = createAsyncThunk(
-  "Skincare/fetchSkincare",
+// Laptops
+export const fetchHeadphonesAsync = createAsyncThunk(
+  "Headphones/fetchHeadphones",
   async () => {
-    const response = await fetchSkincare();
+    const response = await fetchHeadphones();
+    return response.data;
+  }
+);
+
+// SmartWatch
+export const fetchSmartWatchAsync = createAsyncThunk(
+  "SmartWatch/fetchSmartWatch",
+  async () => {
+    const response = await fetchSmartWatch();
     return response.data;
   }
 );
@@ -74,19 +74,19 @@ const filterCategory = createSlice({
           (item) => item.category === "smartphones"
         );
       })
-      .addCase(fetchFragrancesAsync.fulfilled, (state, action) => {
-        state.filterCategory.Fragrances = action.payload.filter(
-          (item) => item.category === "fragrances"
-        );
-      })
       .addCase(fetchLaptopsAsync.fulfilled, (state, action) => {
         state.filterCategory.Laptops = action.payload.filter(
           (item) => item.category === "laptops"
         );
       })
-      .addCase(fetchSkincareAsync.fulfilled, (state, action) => {
-        state.filterCategory.Skincare = action.payload.filter(
-          (item) => item.category === "skincare"
+      .addCase(fetchHeadphonesAsync.fulfilled, (state, action) => {
+        state.filterCategory.Headphones = action.payload.filter(
+          (item) => item.category === "headphones"
+        );
+      })
+      .addCase(fetchSmartWatchAsync.fulfilled, (state, action) => {
+        state.filterCategory.SmartWatch = action.payload.filter(
+          (item) => item.category === "smartwatch"
         );
       });
   },
