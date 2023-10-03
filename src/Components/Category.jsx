@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Category = () => {
   return (
     <>
-      <div className=" flex flex-col lg:flex  max-w-[500px] lg:max-w-[1280px]  cursor-default justify-between m-auto my-16 ">
+      <div className=" flex flex-col lg:flex  max-w-[500px] lg:max-w-[1280px]  cursor-default justify-between m-auto ">
         <h1 className=" font-bold text-4xl my-10 text-center">Categories</h1>
         <div className="  m-auto gap-2 lg:gap-10 flex flex-col lg:flex-row justify-between  ">
           <div className="   h-[400px] w-[360px] lg:h-[600px] lg:w-[500px]   cursor-pointer flex  gap-2 group relative  items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">

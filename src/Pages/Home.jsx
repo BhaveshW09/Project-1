@@ -8,10 +8,11 @@ export const Home = () => {
   return (
     <>
       {/* Lists */}
-      <Link to="/home">
-        <div>
+
+      <div>
+        <Link to="/">
           {/* HeroSection */}
-          <div className="flex justify-center w-full max-h-[220px] md:max-h-[350px] lg:max-h-[600px]">
+          <div className="  flex justify-center h-[300px] md:h-[550px] lg:max-h-[600px]">
             <Swipers />
           </div>
 
@@ -24,8 +25,8 @@ export const Home = () => {
           {/* HeroSection 2 */}
 
           <MainCategory />
-        </div>
-      </Link>
+        </Link>
+      </div>
     </>
   );
 };
