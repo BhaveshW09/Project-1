@@ -1,8 +1,8 @@
-import { MostPopular } from "../Components/MostPopular";
+import { PopularProducts } from "../Components/PopularProducts";
 import { Swipers } from "../Components/Swiper/Swiper";
 import { MagaSale } from "../Components/MagaSale";
 import { Link } from "react-router-dom";
-import { Category } from "../Components/Category";
+import { Category } from "../Components/Category Products/Category";
 
 export const Home = () => {
   return (
@@ -20,7 +20,7 @@ export const Home = () => {
           <Category />
 
           {/* Branded Products */}
-          <MostPopular />
+          <PopularProducts />
 
           {/* HeroSection 2 */}
 

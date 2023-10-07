@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchTrendingProductsAsync } from "../Redux/Products/ProductSlice";
 
-export const MostPopular = () => {
+export const PopularProducts = () => {
   const dispatch = useDispatch();
   const trending = useSelector((state) => state.products.category.trending);
 
@@ -18,7 +18,7 @@ export const MostPopular = () => {
     <>
       <div className="mx-auto flex-col md:max-lg:flex-row max-w-[1280px] mt-10 items-center space-y-4 px-2 py-10  md:gap-6 md:space-y-0">
         <div className=" flex justify-center w-72 m-auto mb-6 ">
-          <h1 className="font-bold text-3xl px-3 py-2  border-b-2 border-black text-center w-full ">
+          <h1 className="font-bold text-3xl px-3 py-2  border-b-2 border-black text-center w-full mb-5 ">
             Popular Products
           </h1>
         </div>
@@ -27,7 +27,7 @@ export const MostPopular = () => {
             <Link to={`/productDetails/${item.id}`}>
               <div
                 key={item.id}
-                className="  flex flex-col gap-6 bg-white  p-4 shadow-md shadow-gray-400 hover:scale-105 transition-all ease-in-out 1s w-[270px] m-auto "
+                className=" flex flex-col gap-6 bg-white  p-4 shadow-md shadow-gray-400 hover:scale-105 transition-all ease-in-out 1s w-[270px] m-auto "
               >
                 <img
                   src={item.thumbnail}

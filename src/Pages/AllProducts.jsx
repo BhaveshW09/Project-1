@@ -1,15 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProductsAsync } from "../Redux/Products/ProductSlice";
 import { Link } from "react-router-dom";
 import { Products } from "../Components/Products";
+import { Spinner } from "../Components/Spinner";
 
 export const AllProducts = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products.product);
+  const [spinner, setSpinner] = useState(true);
 
   useEffect(() => {
+    setSpinner(true);
     dispatch(fetchAllProductsAsync());
+    setSpinner(false);
   }, [dispatch]);
 
   return (
@@ -20,13 +24,18 @@ export const AllProducts = () => {
             All Products
           </h1>
         </div>
-        <div className=" grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12">
-          {product.map((item) => (
-            <Link to={`/productDetails/${item.id}`}>
-              <Products key={item.id} {...item} />
-            </Link>
-          ))}
-        </div>
+
+        {spinner ? (
+          <Spinner />
+        ) : (
+          <div className=" grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12">
+            {product.map((item) => (
+              <Link to={`/productDetails/${item.id}`}>
+                <Products key={item.id} {...item} />
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

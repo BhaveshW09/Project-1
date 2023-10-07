@@ -1,11 +1,15 @@
 import React from "react";
-import "./Category.css";
+// import "./Category.css";
 import { Link } from "react-router-dom";
 export const Category = () => {
   return (
     <>
-      <div className=" flex flex-col lg:flex  max-w-[500px] lg:max-w-[1280px]  cursor-default justify-between m-auto ">
-        <h1 className=" font-bold text-4xl my-10 text-center">Categories</h1>
+      <div className=" flex flex-col lg:flex mt-16  max-w-[500px] lg:max-w-[1280px]  cursor-default justify-between m-auto ">
+        <div className=" flex justify-center w-80 m-auto mb-6  ">
+          <h1 className="font-bold text-3xl px-3 py-2  border-b-2 border-black text-center w-full mb-5 ">
+            Products Category
+          </h1>
+        </div>
         <div className="  m-auto gap-2 lg:gap-10 flex flex-col lg:flex-row justify-between  ">
           <div className="   h-[400px] w-[360px] lg:h-[600px] lg:w-[500px]   cursor-pointer flex  gap-2 group relative  items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
             {/* first Image */}
