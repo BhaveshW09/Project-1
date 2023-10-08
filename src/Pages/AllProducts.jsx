@@ -8,13 +8,13 @@ import { Spinner } from "../Components/Spinner";
 export const AllProducts = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products.product);
-  const [spinner, setSpinner] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setSpinner(true);
+    setLoading(true);
     dispatch(fetchAllProductsAsync());
-    setSpinner(false);
-  }, [dispatch]);
+    setLoading(false);
+  }, [dispatch, loading]);
 
   return (
     <>
@@ -26,7 +26,7 @@ export const AllProducts = () => {
         </div>
 
         <div>
-          {spinner ? (
+          {loading ? (
             <Spinner />
           ) : (
             <div className=" grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12">
