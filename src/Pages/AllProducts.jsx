@@ -8,7 +8,7 @@ import { Spinner } from "../Components/Spinner";
 export const AllProducts = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products.product);
-  const [spinner, setSpinner] = useState(false);
+  const [spinners, setSpinner] = useState(true);
 
   useEffect(() => {
     setSpinner(true);
@@ -25,17 +25,19 @@ export const AllProducts = () => {
           </h1>
         </div>
 
-        {spinner ? (
-          <Spinner />
-        ) : (
-          <div className=" grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12">
-            {product.map((item) => (
-              <Link to={`/productDetails/${item.id}`}>
-                <Products key={item.id} {...item} />
-              </Link>
-            ))}
-          </div>
-        )}
+        <div>
+          {spinners ? (
+            <Spinner />
+          ) : (
+            <div className=" grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12">
+              {product.map((item) => (
+                <Link to={`/productDetails/${item.id}`}>
+                  <Products key={item.id} {...item} />
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
